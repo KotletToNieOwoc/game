@@ -8,7 +8,8 @@ class PlayingState(GameState):
         self.player2 = Player(300,100,50,50)
 
     def update(self):
-        print("updating playing")
+        self.player1.update()
+        self.player2.update()
 
     def render(self):
         pass
