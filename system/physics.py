@@ -1,16 +1,17 @@
-from player import Player
+import pygame
+from entities import Player
 
-class Physics
+class Physics:
     def movement(self, keys):
         isJump = False
         isDash = False
 
         keys = pygame.key.get_pressed()  # Gives dictonary where each key has a value of 1 or 0. 1 is pressed, 0 is not pressed.
 
-        if keys[pygame.K_LEFT] and self.position.x > vel.x : 
+        if keys[pygame.K_LEFT] and self.position.x > self.velocity.x : 
             self.position.x -= self.velocity.x
 
-        if keys[pygame.K_RIGHT]and self.position.x < 1000 - vel.x - width:
+        if keys[pygame.K_RIGHT]and self.position.x < 1000 - self.velocity.x - self.width:
             self.position.x += self.velocity.x
 
         if not(isJump):
@@ -34,8 +35,7 @@ class Physics
             self.velocity.x = 20
 
     def world_collision(self, platforms):
-
+        print("collision")
 
     def player_collision(self):                        
-
-
+        print("collision")
