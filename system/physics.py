@@ -34,7 +34,7 @@ class Physics:
         else:
             self.velocity.x = 20
 
-    def world_collision(self, platforms):
+    def world_collision(self, platforms):                      
         print("collision")
 
     def player_collision(self):                        
