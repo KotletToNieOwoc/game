@@ -3,8 +3,11 @@ from entities import Player
 
 class Physics:
     def movement(self, keys):
+        gravity = pygame.Vector2(0,1)
+
         isJump = False
         isDash = False
+        ground_y = 500 - self.height
 
         keys = pygame.key.get_pressed()  # Gives dictonary where each key has a value of 1 or 0. 1 is pressed, 0 is not pressed.
 
@@ -20,10 +23,11 @@ class Physics:
         
         else: 
             self.position.y -= self.velocity.y
-            self.velocity.y -= 1
+            self.velocity.y -= gravity.y
 
-            if self.velocity.y < -10:
+            if self.position.y >= ground_y:
                 self.velocity.y = 10
+                self.position.y = ground_y
                 isJump = False
 
         if not(isDash):
