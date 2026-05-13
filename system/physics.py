@@ -1,5 +1,5 @@
 import pygame
-from entities import Player
+from entities import Player, Inputs
 
 class Physics:
     def movement(self, keys):
@@ -8,7 +8,7 @@ class Physics:
 
         keys = pygame.key.get_pressed()  # Gives dictonary where each key has a value of 1 or 0. 1 is pressed, 0 is not pressed.
 
-        if keys[pygame.K_LEFT] and self.position.x > self.velocity.x : 
+        if keys[pygame.K_LEFT] == True and self.position.x > self.velocity.x : 
             self.position.x -= self.velocity.x
 
         if keys[pygame.K_RIGHT]and self.position.x < 1000 - self.velocity.x - self.width:
@@ -37,5 +37,6 @@ class Physics:
     def world_collision(self, platforms):                      
         print("collision")
 
-    def player_collision(self):                        
+    @staticmethod
+    def player_collision():                 
         print("collision")
