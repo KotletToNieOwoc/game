@@ -1,7 +1,7 @@
 import time
-from game_states.playing_state import PlayingState
+from game_states import PlayingState
 import pygame
-from input import Input
+from .input import Input
 
 class Game():
     UPS = 30

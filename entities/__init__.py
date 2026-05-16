@@ -1,1 +1,1 @@
-from player import Player, InputValues
+from .player import Player, InputValues
